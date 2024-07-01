@@ -12,7 +12,6 @@ with c:
   data.columns=data.columns.str.lower()
   data.columns=data.columns.str.replace(" ","_")
   data["order_date"]=pd.to_datetime(data["order_date"],format="%Y-%m-%d")
-  data.drop(columns=["Order Date","Product Id"],inplace=True)
   username="root"
   password="root"
   server="localhost"
