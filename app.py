@@ -27,5 +27,5 @@ with c:
   except Exception as e:
       print(f"Connection failed: {e}")
   data.to_sql('data_orders',con=engine,index=False,if_exists='append')
-  st.bar_chart(data=data,x="Order Date",y="List Price")
+  st.bar_chart(data=data,x="order_date",y="list_price")
   
