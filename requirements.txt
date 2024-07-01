@@ -1,0 +1,5 @@
+numpy
+pandas
+streamlit>=1.29.0
+pymysql
+sqlalchemy
