@@ -12,19 +12,6 @@ with c:
   data.columns=data.columns.str.lower()
   data.columns=data.columns.str.replace(" ","_")
   data["order_date"]=pd.to_datetime(data["order_date"],format="%Y-%m-%d")
-  username="root"
-  password="root"
-  server="localhost"
-  port="3306"
-  dbname="sakila"
-  connection_url=f'mysql+pymysql://{username}:{password}@{server}:{port}/{dbname}'
-  engine=create_engine(connection_url)
-  try:
-      connection=engine.connect()
-      print("Connection successful")
-      connection.close()
-  except Exception as e:
-      print(f"Connection failed: {e}")
-  data.to_sql('data_orders',con=engine,index=False,if_exists='append')
+  
   st.bar_chart(data=data,x="order_date",y="list_price")
   
